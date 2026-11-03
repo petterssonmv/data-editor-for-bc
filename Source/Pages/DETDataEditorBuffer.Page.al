@@ -3,7 +3,7 @@ namespace TableDataTool.DET;
 using Microsoft.Utilities;
 using System.IO;
 using System.Reflection;
-    
+
 // SPDX-FileCopyrightText: 2021-2025 Volodymyr Dvernytskyi
 // SPDX-License-Identifier: MIT
 //
@@ -6426,6 +6426,11 @@ page 54635 "DET Data Editor Buffer"
     {
         area(Promoted)
         {
+
+            actionref(View_promoted; "Standard View")
+            {
+
+            }
             actionref("DET Delete All_Promoted"; "DET Delete All")
             {
 
@@ -6465,6 +6470,19 @@ page 54635 "DET Data Editor Buffer"
         }
         area(Processing)
         {
+            action("Standard View")
+            {
+                ApplicationArea = All;
+                Image = List;
+                Caption = 'View';
+                ToolTip = 'Open table in standard view';
+
+                trigger OnAction()
+                begin
+                    Hyperlink(GetUrl(Clienttype::Current, Companyname, ObjectType::Table, RecRef.Number()));
+                end;
+            }
+
             action("DET Delete All")
             {
                 ApplicationArea = All;
