@@ -4,7 +4,7 @@ namespace TableDataTool.DET;
 // SPDX-License-Identifier: MIT
 //
 // Original author — Volodymyr Dvernytskyi (Data Editor Tool)
-permissionset 54640 "DET Data Editor Tool"
+permissionset 54640 "TableDataTool DET"
 {
     Assignable = true;
     Caption = 'Data Editor Tool';
